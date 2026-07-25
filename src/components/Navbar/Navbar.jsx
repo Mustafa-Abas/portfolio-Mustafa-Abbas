@@ -13,7 +13,7 @@ const Navbar = () => {
 
   return (
     <nav className={`${styles.navbar} ${darkMode ? styles.dark : styles.light}`}>
-      <a href="#home" className={styles.logo}>Mohamed Samir</a>
+      <a href="#home" className={styles.logo}>Mustafa Abbas</a>
 
       <ul className={`${styles.navLinks} ${isMenuOpen ? styles.active : ''}`}>
         <li>

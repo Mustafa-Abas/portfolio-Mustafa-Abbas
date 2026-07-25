@@ -1,292 +1,143 @@
 .skillsSection {
-  padding: 80px 20px; /* إضافة padding جانبي */
+  padding: 80px 56px;
   text-align: center;
   transition: background 0.3s ease;
 }
 
-/* خلفية السكشن */
-.skillsSection.light {
-  background: #f5f7fa;
-  color: #111;
-}
-
 .skillsSection.dark {
-  background: #0d0d1a;
+  background: #0b1221;
   color: #fff;
 }
 
+.skillsSection.light {
+  background: #f8fafc;
+  color: #0f172a;
+}
+
 .sectionTitle h2 {
-  font-size: clamp(2rem, 4vw, 3.5rem); /* متجاوب مع حجم الشاشة */
+  font-size: clamp(2rem, 4vw, 3.5rem);
   margin-bottom: 15px;
   font-weight: 700;
 }
 
 .titleUnderline {
-  width: 80px; /* أكبر شوية */
-  height: 5px;
-  background: linear-gradient(90deg, #38bdf8, #6366f1);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #f97316, #ea580c);
   margin: 0 auto 50px;
-  border-radius: 3px;
+  border-radius: 999px;
 }
 
 .skillsContent {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-  max-width: 1300px; /* أوسع لاستيعاب 3 بوكسات */
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 74px;
+  row-gap: 96px;
+  max-width: 1540px;
   margin: 0 auto;
 }
 
-/* الكروت */
 .skillCard {
-  padding: 30px 25px; /* padding أصغر من تحت وجنبين */
-  border-radius: 20px;
   width: 100%;
-  max-width: 350px; /* مناسب للـ 3 بوكسات */
-  min-height: 380px; /* أقصر من تحت */
   text-align: left;
-  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
-  flex: 1; /* للتوزيع المتساوي */
-}
-
-/* Light Mode للكروت */
-.skillsSection.light .skillCard {
-  background: #fff;
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
-}
-
-/* Dark Mode للكروت */
-.skillsSection.dark .skillCard {
-  background: #1a1a2e;
-  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.4);
-}
-
-.skillCard:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-}
-
-.skillsSection.dark .skillCard:hover {
-  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+  background: transparent;
 }
 
 .skillCard h3 {
-  margin-bottom: 20px; /* مسافة أصغر */
-  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
-  color: #38bdf8;
-  display: flex;
-  align-items: center;
-  font-weight: 600;
+  margin: 0 0 36px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid rgba(255, 151, 0, 0.2);
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  color: #ff9700;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
 }
 
 .icon {
-  margin-right: 12px;
-  font-size: clamp(1.6rem, 3vw, 2rem); /* أيقونة أكبر */
-  color: #38bdf8;
+  display: none;
 }
 
 .skillItem {
-  margin-bottom: 18px; /* مسافة أصغر بين العناصر */
+  margin-bottom: 34px;
+}
+
+.skillLabelRow {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 14px;
 }
 
-.skillItem span:first-child {
-  font-size: clamp(1rem, 1.8vw, 1.3rem); /* نص أكبر لأسماء المهارات */
-  font-weight: 500;
-  min-width: 100px;
+.skillLabelRow span:first-child {
+  font-size: clamp(1rem, 1.6vw, 1.12rem);
+  font-weight: 600;
+  color: #f8fafc;
 }
 
 .progress {
-  flex: 1;
-  height: 10px; /* أعرض */
-  background: #e4e4e4;
-  margin: 0 15px; /* مسافة أكبر */
-  border-radius: 6px;
+  width: 100%;
+  height: 7px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
   overflow: hidden;
-  position: relative;
 }
 
-.skillsSection.dark .progress {
-  background: #333;
-}
-
-.progress div {
+.progressFill {
   height: 100%;
-  background: linear-gradient(90deg, #38bdf8, #6366f1);
-  border-radius: 6px;
-  transition: width 2s ease;
+  background: #05c9e8;
+  border-radius: 999px;
   position: relative;
 }
 
-/* تأثير لامع على البار */
-.progress div::after {
+.progressFill::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-  animation: shimmer 2s infinite;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  animation: shimmer 2.2s infinite;
 }
 
 @keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100%); }
 }
 
 .percent {
-  min-width: 60px; /* أوسع */
+  min-width: 60px;
   text-align: right;
   font-weight: bold;
-  font-size: clamp(0.95rem, 1.5vw, 1.2rem); /* نص أكبر للنسب المئوية */
-  color: #38bdf8;
+  font-size: clamp(0.95rem, 1.5vw, 1.2rem);
+  color: #05d7f7;
 }
 
-/* استجابة للشاشات المختلفة */
-
-/* شاشات كبيرة جداً */
-@media (min-width: 1400px) {
-  .skillsSection {
-    padding: 100px 20px;
-  }
-  
-  .skillsContent {
-    gap: 40px;
-    max-width: 1400px; /* أوسع للشاشات الكبيرة */
-  }
-  
-  .skillCard {
-    max-width: 400px; /* أكبر في الشاشات الكبيرة */
-    min-height: 380px; /* أقصر قليلاً */
-  }
+.skillsSection.light .sectionTitle h2,
+.skillsSection.light .skillLabelRow span:first-child {
+  color: #0f172a;
 }
 
-/* شاشات متوسطة كبيرة (لابتوب) */
-@media (max-width: 1199px) {
-  .skillsContent {
-    gap: 25px;
-    max-width: 1000px; /* مناسب للـ 3 بوكسات */
-  }
-  
-  .skillCard {
-    max-width: 300px; /* أصغر قليلاً */
-  }
+.skillsSection.light .skillCard h3 {
+  border-bottom-color: rgba(255, 151, 0, 0.35);
 }
 
-/* شاشات متوسطة - لا يزال 3 بوكسات */
+.skillsSection.light .progress {
+  background: #dbe4f0;
+}
+
 @media (max-width: 992px) {
-  .skillsContent {
-    gap: 20px;
-    max-width: 900px;
-  }
-  
-  .skillCard {
-    max-width: 280px;
-  }
+  .skillsSection { padding: 70px 32px; }
+  .skillsContent { column-gap: 36px; row-gap: 64px; }
 }
 
-/* تابلت - بداية التحويل للعمودي */
 @media (max-width: 768px) {
-  .skillsSection {
-    padding: 60px 15px;
-  }
-  
-  .skillsContent {
-    gap: 20px;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .skillCard {
-    max-width: 100%;
-    width: 100%;
-    min-height: auto;
-    padding: 25px 20px; /* padding أصغر في التابلت */
-    flex: none; /* إلغاء flex للعرض العمودي */
-  }
-  
-  .titleUnderline {
-    width: 60px;
-    margin-bottom: 40px;
-  }
+  .skillsSection { padding: 60px 24px; }
+  .skillsContent { grid-template-columns: 1fr; gap: 44px; }
+  .skillCard h3 { margin-bottom: 30px; }
 }
 
-/* موبايل */
 @media (max-width: 480px) {
-  .skillsSection {
-    padding: 40px 10px;
-  }
-  
-  .skillCard {
-    padding: 25px 20px;
-    border-radius: 15px;
-  }
-  
-  .skillCard h3 {
-    margin-bottom: 25px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
-  }
-  
-  .icon {
-    margin-right: 0;
-    margin-bottom: 5px;
-  }
-  
-  .skillItem {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px; /* مسافة أصغر */
-  }
-  
-  .skillItem span:first-child {
-    min-width: auto;
-    width: 100%;
-  }
-  
-  .progress {
-    width: 100%;
-    margin: 0;
-  }
-  
-  .percent {
-    min-width: auto;
-    width: 100%;
-    text-align: left;
-    margin-top: 5px;
-  }
-}
-
-/* CSS إضافي لضمان 3 بوكسات في صف واحد */
-@media (min-width: 769px) {
-  .skillCard:nth-child(4) {
-    display: none; /* إخفاء البوكس الرابع إذا كان موجود */
-  }
-  
-  .skillsContent {
-    justify-content: space-between; /* توزيع متساوي */
-  }
-  
-  /* إذا كان لديك بالضبط 3 بوكسات */
-  .skillCard:nth-child(1),
-  .skillCard:nth-child(2),
-  .skillCard:nth-child(3) {
-    flex: 0 1 calc(33.333% - 20px); /* عرض ثابت لكل بوكس */
-  }
-}
-
-/* شاشات صغيرة جداً */
-@media (max-width: 320px) {
-  .skillsSection {
-    padding: 25px 8px; /* padding أصغر */
-  }
-  
-  .skillCard {
-    padding: 18px 12px; /* padding أصغر جداً */
-  }
+  .skillsSection { padding: 48px 18px; }
+  .skillLabelRow span:first-child { font-size: 1rem; }
+  .percent { min-width: 48px; }
 }

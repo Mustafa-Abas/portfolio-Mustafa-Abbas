@@ -7,20 +7,23 @@ export const useContact = () => useContext(ContactContext);
 export const ContactProvider = ({ children }) => {
   const sendEmail = async (formData) => {
     try {
-      await emailjs.send(
-        "service_bnqczmk",        // Service ID الصحيح
-        "template_xs8xpyq",       // Template ID الجديد من حسابك
+      emailjs.init("Ie4xDZuo3juMgV5sj"); // Public Key الصحيح من حساب EmailJS
+      const result = await emailjs.send(
+        "service_vtp50ns",       // Service ID الصحيح من حسابك
+        "template_8cmy0xc",       // Template ID الصحيح من حسابك
         {
           name: formData.name,    // يتطابق مع {{name}}
           email: formData.email,  // يتطابق مع {{email}}
           title: formData.subject, // يتطابق مع {{title}} في القالب
-          message: formData.message
+          message: formData.message,
+          to_email: "eng.mustafaahmed10@gmail.com"
         },
-        "2ox6DEfOPYczJoSok"       // Public Key الصحيح
+        "Ie4xDZuo3juMgV5sj"      // Public Key الصحيح من حساب EmailJS
       );
-      // إشعار النجاح يظهر في Contact.jsx
+      return result;
     } catch (error) {
-      console.error(error); // لا نعرض أي رسالة فشل للمستخدم
+      console.error("EmailJS send error:", error);
+      throw error;
     }
   };
 

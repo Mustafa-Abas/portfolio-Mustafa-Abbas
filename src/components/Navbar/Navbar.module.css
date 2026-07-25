@@ -479,3 +479,12 @@ svg[title="Fill"],
 .toggleWrapper::after {
   display: none !important;
 }
+
+@media (max-width: 768px) {
+  .navbar { position: fixed; }
+  .navLinks { top: 72px; max-height: calc(100vh - 72px); overflow-y: auto; }
+}
+
+@media (max-width: 480px) {
+  .navLinks { top: 62px; max-height: calc(100vh - 62px); }
+}

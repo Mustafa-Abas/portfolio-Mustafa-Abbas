@@ -1,10 +1,9 @@
 /* Root container */
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-  transition: all 0.3s ease;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 /* Logos */
@@ -73,10 +72,6 @@ body.light {
 
 /* Laptops / tablets */
 @media (max-width: 1024px) {
-  #root {
-    padding: 1.5rem;
-  }
-
   .logo {
     height: 5em;
     padding: 1em;
@@ -93,10 +88,6 @@ body.light {
 
 /* Tablets / small devices */
 @media (max-width: 768px) {
-  #root {
-    padding: 1rem;
-  }
-
   .logo {
     height: 4em;
     padding: 0.8em;
@@ -113,10 +104,6 @@ body.light {
 
 /* Mobiles */
 @media (max-width: 480px) {
-  #root {
-    padding: 0.5rem;
-  }
-
   .logo {
     height: 3em;
     padding: 0.5em;

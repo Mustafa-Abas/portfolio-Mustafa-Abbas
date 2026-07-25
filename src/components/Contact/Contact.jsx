@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import styles from "../Contact/Contact.module.css";
 import { usePortfolio } from "../Context/PortfolioContext";
 import { useContact } from "../Context/Contact";
-import { toast, Toaster } from "react-hot-toast";
-import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 const Contact = () => {
   const { darkMode } = usePortfolio();
@@ -16,6 +15,9 @@ const Contact = () => {
     message: ""
   });
 
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -24,19 +26,28 @@ const Contact = () => {
     e.preventDefault();
     try {
       await sendEmail(formData);
-      toast.success("Message sent successfully!"); // إشعار النجاح فقط
+      setSuccessMessage("تمام، الرسالة وصلت!");
+      setErrorMessage("");
       setFormData({ name: "", email: "", subject: "", message: "" });
+      setTimeout(() => setSuccessMessage(""), 5000);
     } catch (error) {
-      console.error(error); // الأخطاء لا تظهر للمستخدم
+      console.error("Send email failed:", error);
+      setErrorMessage("حصل خطأ في الإرسال، جرّب مرة تانية.");
+      setSuccessMessage("");
     }
   };
 
   return (
     <section className={`${styles.contactSection} ${darkMode ? styles.dark : styles.light}`}>
-      <Toaster position="top-right" />
       <div className={styles.container}>
         <h2>Get In Touch</h2>
         <div className={styles.titleUnderline}></div>
+        {successMessage && (
+          <div className={styles.successMessage}>{successMessage}</div>
+        )}
+        {errorMessage && (
+          <div className={styles.errorMessage}>{errorMessage}</div>
+        )}
 
         <div className={styles.contactWrapper}>
           <div className={styles.contactInfo}>
@@ -44,18 +55,18 @@ const Contact = () => {
             <p>Feel free to reach out if you're looking for a developer, have a question, or just want to connect.</p>
 
             <div className={styles.infoItem}>
-              <span>📧</span> mohamedsamir111qwe222@gmail.com
+              <span>📧</span> eng.mustafaahmed10@gmail.com
             </div>
             <div className={styles.infoItem}>
-              <span>📞</span> +971 50 707 9549
+              <span>📞</span> +20 109 879 9596
             </div>
             <div className={styles.infoItem}>
-              <span>📍</span> Dubai, United Arab Emirates
+              <span>📍</span> Cairo, Nasr City
             </div>
 
             <div className={styles.socials}>
   <a 
-     href="https://www.linkedin.com/in/mohamed-samir-73a4ba237?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" 
+     href="https://www.linkedin.com/in/mustafa-ahmed-9935b1295?utm_source=share_via&utm_content=profile&utm_medium=member_android" 
     target="_blank" 
     rel="noopener noreferrer"
   >
@@ -63,7 +74,7 @@ const Contact = () => {
   </a>
 
   <a 
-     href="https://github.com/mohamedsamirmohamed" 
+     href="https://github.com/Mustafa-Abas" 
     target="_blank" 
     rel="noopener noreferrer"
   >

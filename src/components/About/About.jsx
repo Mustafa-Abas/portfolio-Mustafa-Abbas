@@ -2,7 +2,7 @@ import React from 'react';
 import { useSpring, animated } from '@react-spring/web';
 import { usePortfolio } from '../Context/PortfolioContext';
 import styles from '../About/About.module.css';
-import profileImage from '../image/freepik__the-style-is-candid-image-photography-with-natural__17596.png'; // ضع صورتك هنا
+import profileImage from '../image/data-analysis.png';
 
 const About = () => {
   const { darkMode } = usePortfolio();
@@ -23,24 +23,20 @@ const About = () => {
         <div className={styles.aboutContent}>
           {/* النصوص */}
           <animated.div style={contentAnimation} className={styles.aboutText}>
-            <h3>Who am I?</h3>
+            <h3>Turning Data Into Decisions</h3>
             <div className={styles.textUnderline}></div>
 
             <div className={styles.description}>
-              <p>Front-End Developer skilled in React.js with experience building responsive and user-friendly web applications. Passionate about creating innovative solutions and continuously improving my skills in JavaScript and modern web technologies.</p>
-              <p>I'm constantly learning, growing, and exploring new technologies....</p>
+              <p>I'm a passionate Data Analyst with expertise in transforming complex datasets into clear, actionable insights. I combine statistical rigor with compelling storytelling to help organizations make data-driven decisions.</p>
+              <p>My approach bridges the gap between technical analysis and business strategy, ensuring that data insights directly translate into measurable outcomes.</p>
             </div>
 
-            <div className={styles.statsContainer}>
-              <animated.div style={statsAnimation} className={styles.stats}>
-                <div className={styles.statItem}>
-                  <div className={styles.statNumber}>5+</div>
-                  <div className={styles.statLabel}>Projects</div>
-                </div>
-                <div className={styles.statItem}>
-                  <div className={styles.statNumber}>100%</div>
-                  <div className={styles.statLabel}>Dedicated</div>
-                </div>
+            <div className={styles.skillsContainer}>
+              <animated.div style={statsAnimation} className={styles.skills}>
+                <div className={styles.skillBadge}>Python</div>
+                <div className={styles.skillBadge}>SQL</div>
+                <div className={styles.skillBadge}>Power BI</div>
+                <div className={styles.skillBadge}>Statistics</div>
               </animated.div>
             </div>
           </animated.div>
@@ -50,7 +46,7 @@ const About = () => {
             <div className={styles.imageContainer}>
               <img 
                 src={profileImage} 
-                alt="Profile" 
+                alt="Data analysis dashboards and visualizations" 
                 className={styles.profileImage} 
               />
             </div>

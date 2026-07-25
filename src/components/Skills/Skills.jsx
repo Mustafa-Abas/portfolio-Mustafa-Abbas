@@ -33,13 +33,15 @@ const Skills = () => {
 
     return (
       <div className={styles.skillItem}>
-        <span>{label}</span>
-        <div className={styles.progress}>
-          <animated.div style={barAnimation}></animated.div>
+        <div className={styles.skillLabelRow}>
+          <span>{label}</span>
+          <span className={styles.percent}>
+            {inView && <CountUp end={value} duration={2} />}%
+          </span>
         </div>
-        <span className={styles.percent}>
-          {inView && <CountUp end={value} duration={2} />}%
-        </span>
+        <div className={styles.progress}>
+          <animated.div className={styles.progressFill} style={barAnimation}></animated.div>
+        </div>
       </div>
     );
   };
@@ -57,30 +59,23 @@ const Skills = () => {
         </animated.div>
 
         <div className={styles.skillsContent}>
-          {/* الكارت الأول */}
           <animated.div style={cardAnimation} className={styles.skillCard}>
-            <h3><FaCode className={styles.icon}/> Coding Skills</h3>
-            <SkillBar label="HTML" value={90} />
-            <SkillBar label="CSS" value={65} />
-            <SkillBar label="JavaScript" value={70} />
-            <SkillBar label="React" value={90} />
+            <h3><FaCode className={styles.icon}/> Programming & Tools</h3>
+            <SkillBar label="Python" value={92} />
+            <SkillBar label="Excel / VBA" value={88} />
           </animated.div>
 
-          {/* الكارت الثاني */}
           <animated.div style={cardAnimation} className={styles.skillCard}>
-            <h3><FaTools className={styles.icon}/> Tools & Technologies</h3>
-            <SkillBar label="VS Code" value={90} />
-            <SkillBar label="Bootstrap" value={75} />
-            <SkillBar label="Git & GitHub" value={63} />
+            <h3><FaTools className={styles.icon}/> Databases & SQL</h3>
+            <SkillBar label="SQL" value={95} />
           </animated.div>
 
-          {/* الكارت الثالث */}
           <animated.div style={cardAnimation} className={styles.skillCard}>
-            <h3><FaLaptopCode className={styles.icon}/> Professional Skills</h3>
-            <SkillBar label="Web Design" value={66} />
-            <SkillBar label="Web Development" value={60} />
-            <SkillBar label="Graphic Design" value={55} />
+            <h3><FaLaptopCode className={styles.icon}/> Visualization</h3>
+            <SkillBar label="Power BI" value={90} />
+            <SkillBar label="Tableau" value={85} />
           </animated.div>
+
         </div>
       </div>
     </section>

@@ -1,10 +1,9 @@
 import React from 'react';
-import { FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa';
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import { useSpring, animated } from '@react-spring/web';
 import { usePortfolio } from '../Context/PortfolioContext';
-import { Link } from 'react-router-dom'; // فقط للروابط الداخلية
 import styles from '../Hero/Hero.module.css';
-import sphereImage from '../image/IMG_1843.jpg';
+import sphereImage from '../image/IMG_1843.jpeg';
 
 export default function Hero() {
   const { darkMode } = usePortfolio();
@@ -28,46 +27,48 @@ export default function Hero() {
     config: { duration: 2000 },
   });
 
+  // دالة للتمرير السلس إلى قسم Contact
+  const scrollToContact = () => {
+    const section = document.getElementById('Contact');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  // دالة تحميل السيرة الذاتية من مجلد public
   return (
     <div className={`${styles.hero} ${darkMode ? styles.dark : styles.light}`}>
       <animated.div style={animation} className={styles.content}>
         <h2>Hello, I'm</h2>
-        <h1>Mohamed Samir</h1>
-        <h3>Frontend Developer</h3>
-        <p>Turning Ideas into Code, Towards a Purpose</p>
+        <h1>Mustafa Abbas</h1>
+        <h3>Data Analyst & BI Specialist</h3>
+        <p>Transforming raw data into powerful insights. Specializing in advanced analytics, visualization, and data-driven decision making.</p>
 
         <div className={styles.cta}>
-          <a href="#Contact" className={styles.hireBtn}>Hire Me</a>
+          {/* زر التمرير لقسم Contact */}
+          <button onClick={scrollToContact} className={styles.hireBtn}>
+            Hire Me
+          </button>
 
-          <a href="/Mohamed Samir frontend.pdf" download className={styles.downloadBtn}>
-            Download Resume
-          </a>
+          {/* زر تحميل السيرة الذاتية */}
         </div>
 
         <animated.div style={socialAnimation} className={styles.social}>
-          <a 
-            href="https://www.linkedin.com/in/mohamed-samir-73a4ba237?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" 
-            target="_blank" 
+          <a
+            href="https://www.linkedin.com/in/mustafa-ahmed-9935b1295?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+            target="_blank"
             rel="noopener noreferrer"
           >
             <FaLinkedin />
           </a>
 
-          <a 
-            href="https://github.com/mohamedsamirmohamed" 
-            target="_blank" 
+          <a
+            href="https://github.com/Mustafa-Abas"
+            target="_blank"
             rel="noopener noreferrer"
           >
             <FaGithub />
           </a>
-
-          {/* <a 
-            href="https://instagram.com" 
-            target="_blank" 
-            rel="noopener noreferrer"
-          >
-            <FaInstagram />
-          </a> */}
         </animated.div>
       </animated.div>
 
