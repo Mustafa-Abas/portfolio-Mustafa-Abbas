@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/portfolio-Mustafa-Abbas/static/css/main.7a0063b7.css",
+    "main.js": "/portfolio-Mustafa-Abbas/static/js/main.97afc16d.js",
+    "static/js/453.9c7f0fb5.chunk.js": "/portfolio-Mustafa-Abbas/static/js/453.9c7f0fb5.chunk.js",
+    "static/media/profileImage6.png": "/portfolio-Mustafa-Abbas/static/media/profileImage6.05240de06482064d5c2f.png",
+    "static/media/profileImage3.png": "/portfolio-Mustafa-Abbas/static/media/profileImage3.d37da8e600addd0f5d97.png",
+    "static/media/profileImage5.png": "/portfolio-Mustafa-Abbas/static/media/profileImage5.5fda932aff254addbc2b.png",
+    "static/media/profileImage4.png": "/portfolio-Mustafa-Abbas/static/media/profileImage4.8646d4de58cd3a49283b.png",
+    "static/media/data-analysis.png": "/portfolio-Mustafa-Abbas/static/media/data-analysis.c882c80df07caba1df70.png",
+    "static/media/excel-sales-dashboard.png": "/portfolio-Mustafa-Abbas/static/media/excel-sales-dashboard.a1d5b6c0f477965f9d8c.png",
+    "static/media/1.png": "/portfolio-Mustafa-Abbas/static/media/1.2c685d9c59e06226585d.png",
+    "static/media/profileImage2.png": "/portfolio-Mustafa-Abbas/static/media/profileImage2.99c1d095715b6fc37607.png",
+    "static/media/3.png": "/portfolio-Mustafa-Abbas/static/media/3.85644cca450c80d18cc6.png",
+    "static/media/4.png": "/portfolio-Mustafa-Abbas/static/media/4.ff76cdd436ebcebab788.png",
+    "static/media/2.png": "/portfolio-Mustafa-Abbas/static/media/2.5cd0f4c297c31c03e348.png",
+    "static/media/fa-solid-900.woff2": "/portfolio-Mustafa-Abbas/static/media/fa-solid-900.0ae4e6254fc19607c79e.woff2",
+    "static/media/fa-brands-400.woff2": "/portfolio-Mustafa-Abbas/static/media/fa-brands-400.e7461d69dbbff1310a5c.woff2",
+    "static/media/profileImage1.png": "/portfolio-Mustafa-Abbas/static/media/profileImage1.9ec6d138fd5bca5b7a84.png",
+    "static/media/IMG_1843.jpeg": "/portfolio-Mustafa-Abbas/static/media/IMG_1843.183fde7a365298bcd60d.jpeg",
+    "static/media/fa-regular-400.woff2": "/portfolio-Mustafa-Abbas/static/media/fa-regular-400.1f38a564cd9eae27ebc3.woff2",
+    "static/media/fa-v4compatibility.woff2": "/portfolio-Mustafa-Abbas/static/media/fa-v4compatibility.661bd6b7245d5205d3e1.woff2",
+    "index.html": "/portfolio-Mustafa-Abbas/index.html",
+    "main.7a0063b7.css.map": "/portfolio-Mustafa-Abbas/static/css/main.7a0063b7.css.map",
+    "main.97afc16d.js.map": "/portfolio-Mustafa-Abbas/static/js/main.97afc16d.js.map",
+    "453.9c7f0fb5.chunk.js.map": "/portfolio-Mustafa-Abbas/static/js/453.9c7f0fb5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7a0063b7.css",
+    "static/js/main.97afc16d.js"
+  ]
+}
